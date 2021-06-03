@@ -2,8 +2,8 @@
 
 [image1]: https://user-images.githubusercontent.com/10624937/43851024-320ba930-9aff-11e8-8493-ee547c6af349.gif "Trained Agent"
 [image2]: https://user-images.githubusercontent.com/10624937/43851646-d899bf20-9b00-11e8-858c-29b5c2c94ccc.png "Crawler"
-[ninja]: https://github.com/bedlopie/NanoDegree-DRL/blob/7271aa518767a0af4ce203a044c33f8caf8bc65d/deep-reinforcement-learning/p2_continuous-control/Unity_Environment_-_Ninja_Spidy.gif "Ninja"
-[running]: https://github.com/bedlopie/NanoDegree-DRL/blob/7271aa518767a0af4ce203a044c33f8caf8bc65d/deep-reinforcement-learning/p2_continuous-control/Unity_Environment_-_Running_Spidy.gif "Running"
+[ninja]: https://github.com/bedlopie/NanoDegree-DRL/blob/1189ec0bffa3dfa0d21299d721ff32e0be674c70/deep-reinforcement-learning/p2_continuous-control/asset/Unity_Environment_-_Ninja_Spidy.gif "Ninja"
+[running]: https://github.com/bedlopie/NanoDegree-DRL/blob/1189ec0bffa3dfa0d21299d721ff32e0be674c70/deep-reinforcement-learning/p2_continuous-control/asset/Unity_Environment_-_Running_Spidy.gif "Running"
 
 
 # Project 2: Continuous Control
