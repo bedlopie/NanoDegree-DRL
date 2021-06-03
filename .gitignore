@@ -150,3 +150,4 @@ deep-reinforcement-learning/UnityEnvironment/
 test*.ipynb
 test*.py
 requirements2.txt
+*.mp4
