@@ -11,11 +11,14 @@ This repository contains material related to Udacity's [Deep Reinforcement Learn
 
 ## Table of Contents
 
-## Installation
+### Installation
 
 This repository is quite sensible to package version.
 * You need Python 3.8.x (not that I couldn't make it waork on Python 3.9 at the date of creation of this file)
 * Then you need to clone this repository
+```bash
+git clone https://github.com/bedlopie/NanoDegree-DRL.git
+```
 * I would advise you to use a virtual environement to make sure all is well installed and isolated from the rest of your machine, don't forget to upgrade pip
 ```bash
 python -m venv drlnd
@@ -27,7 +30,7 @@ pip install -r requirements.txt
 ```
 * Then, you need to install another set of package
 ```bash
-pip install -r ./deep-reinforcement-learning/pyhton/requirements.txt
+pip install -r ./deep-reinforcement-learning/python/requirements.txt
 ```
 * And last create the Kernel to run all of this, you need to set jupyter to use this kernel instead of the default one
 ```bash
@@ -35,6 +38,29 @@ python -m ipykernel install --user --name drlnd --display-name "drlnd"
 ```
 
 Then you can go in project 1 - 2 - 3 to run the projects
+
+### How to use the project
+
+**The projects are all built the same way.**
+You have 3 files
+1. *.ipynb         / file to run project (ie. Continuous_Control.ipynb)
+2. model.py        / file containing the Deep Neural Network model 
+3. ddpg_agent.py   / file containing the agent in charge of acting on the environement
+
+model and agent file have been setup and fine tune.
+you need to go in the ipynb file to run the project.
+
+#### Demo vs Training mode
+
+in cell 2, you have a "demo" variable. Set it to True to view save model and to False to train a model
+
+#### Training
+
+set up hyperparameters of agent and model in cell number 8, by modifying the dictonary called hyperparameters
+Checkpoints are created along the way. One for critic network and one for actor
+* checkpoint_cc_critic_##.pth         ## being the average score value obtained in training
+* checkpoint_cc_critic_solved.pth     checkpoint created when problem is considered solved
+* checkpoint_cc_critic_max.pth        checkpoint created when training is finished (might not be the best)
 
 ### Tutorials
 
