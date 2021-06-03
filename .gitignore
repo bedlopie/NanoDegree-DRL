@@ -147,5 +147,6 @@ cython_debug/
 # python/
 drlnd/
 deep-reinforcement-learning/UnityEnvironment/
-test.*
+test*.ipynb
+test*.py
 requirements2.txt
