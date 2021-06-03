@@ -14,11 +14,6 @@ For this project, you will work with the [Reacher](https://github.com/Unity-Tech
 
 ![Trained Agent][image1]
 
-![Trained Spider Agent][ninja]
-
-![Trained Spider Agent][running]
-
-
 In this environment, a double-jointed arm can move to target locations. A reward of +0.1 is provided for each step that the agent's hand is in the goal location. Thus, the goal of your agent is to maintain its position at the target location for as many time steps as possible.
 
 The observation space consists of 33 variables corresponding to position, rotation, velocity, and angular velocities of the arm. Each action is a vector with four numbers, corresponding to torque applicable to two joints. Every entry in the action vector should be a number between -1 and 1.
@@ -128,7 +123,7 @@ Follow the instructions in `Continuous_Control.ipynb` to get started with traini
 
 After you have successfully completed the project, you might like to solve the more difficult **Crawler** environment.
 
-![Crawler][image2]
+![Trained Spider Agent][ninja]      ![Trained Spider Agent][running]
 
 In this continuous control environment, the goal is to teach a creature with four legs to walk forward without falling.  
 
