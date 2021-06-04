@@ -154,8 +154,7 @@ requirements2.txt
 deep-reinforcement-learning/p1_navigation/NN.pptx
 deep-reinforcement-learning/p1_navigation/*.pth
 deep-reinforcement-learning/dqn/solution/checkpoint.pth
-deep-reinforcement-learning/ddpg-pendulum/checkpoint_critic.pth
-deep-reinforcement-learning/ddpg-pendulum/checkpoint_actor.pth
+deep-reinforcement-learning/ddpg-pendulum/checkpoint*.pth
 deep-reinforcement-learning/cross-entropy/checkpoint.pth
 deep-reinforcement-learning/dqn/exercise/checkpoint.pth
-deep-reinforcement-learning/p1_navigation/NN.pptx
+
