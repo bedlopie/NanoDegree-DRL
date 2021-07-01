@@ -157,4 +157,4 @@ deep-reinforcement-learning/dqn/solution/checkpoint.pth
 deep-reinforcement-learning/ddpg-pendulum/checkpoint*.pth
 deep-reinforcement-learning/cross-entropy/checkpoint.pth
 deep-reinforcement-learning/dqn/exercise/checkpoint.pth
-
+deep-reinforcement-learning/p3_collab-compet/*.pth
