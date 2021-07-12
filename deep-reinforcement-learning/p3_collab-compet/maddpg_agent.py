@@ -147,12 +147,12 @@ class MADDPG_Agent():
         self.soft_update(self.actor_local, self.actor_target, self.TAU)
 
     def save(self, value):
-        torch.save(self.actor_local.state_dict(), 'checkpoint_agent{}_actor_episode{}.pth'.format(self.id, value))
-        torch.save(self.critic_local.state_dict(), 'checkpoint_agent{}_critic_episode{}.pth'.format(self.id, value))
+        torch.save(self.actor_local.state_dict(), './Checkpoints/checkpoint_agent{}_actor_episode{}.pth'.format(self.id, value))
+        torch.save(self.critic_local.state_dict(), './Checkpoints/checkpoint_agent{}_critic_episode{}.pth'.format(self.id, value))
 
     def load(self, value):
-        self.actor_local.load_state_dict(torch.load('checkpoint_agent{}_actor_episode{}.pth'.format(self.id, value)))
-        self.critic_local.load_state_dict(torch.load('checkpoint_agent{}_critic_episode{}.pth'.format(self.id, value)))      
+        self.actor_local.load_state_dict(torch.load('./Checkpoints/checkpoint_agent{}_actor_episode{}.pth'.format(self.id, value)))
+        self.critic_local.load_state_dict(torch.load('./Checkpoints/checkpoint_agent{}_critic_episode{}.pth'.format(self.id, value)))      
 
 
 class MADDPG_Agency():
