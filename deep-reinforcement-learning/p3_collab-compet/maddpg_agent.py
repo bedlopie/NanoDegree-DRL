@@ -113,7 +113,7 @@ class MADDPG_Agent():
         #_whatis(actions_next, texte="Next actions", block=True)
         torch.autograd.set_detect_anomaly(True)
         with torch.no_grad():
-            Q_targets_next = self.critic_target(next_states.flatten(start_dim=1), actions_next)
+            Q_targets_next = self.critic_target(next_states.view(self.BATCH_SIZE, -1), actions_next)
         #_whatis(Q_targets_next, texte="Q target NEXT shpae should be [512]")
         # Compute Q targets for current states (y_i)
         reward = torch.unsqueeze(extract_agent_data(rewards, agent_id) ,dim=1)
@@ -122,7 +122,7 @@ class MADDPG_Agent():
         Q_targets = reward + (gamma * Q_targets_next * (1 - done))
         #_whatis(Q_targets, texte="Q target shape should be [512]")
         # Compute critic loss
-        Q_expected = self.critic_local(states.flatten(start_dim=1), actions.flatten(start_dim=1))
+        Q_expected = self.critic_local(states.view(self.BATCH_SIZE, -1), actions.view(self.BATCH_SIZE, -1))
         #_whatis(Q_expected, texte="Q expected shpae should be [512]", block=True)
         critic_loss = F.mse_loss(Q_expected, Q_targets.detach())
         # Minimize the loss
@@ -136,7 +136,7 @@ class MADDPG_Agent():
         # ---------------------------- update actor ---------------------------- #
         # Compute actor loss
         
-        actor_loss = -self.critic_local(states.flatten(start_dim=1), actions_pred).mean()
+        actor_loss = -self.critic_local(states.view(self.BATCH_SIZE, -1), actions_pred).mean()
         # Minimize the loss
         self.actor_optimizer.zero_grad()
         actor_loss.backward()
@@ -263,8 +263,6 @@ class MADDPG_Agency():
         for agent in self.agents:
             actions_pred = torch.cat([agent.actor_local(extract_agent_data(states, i)) if i == agent.id else agent.actor_local(extract_agent_data(states, i)).detach() for i in range(self.nb_agent)], dim=1)
         
-            #_whatis(actions_next, texte="actions_next should be [512][4]", block=True)
-
             agent.learn(agent_id, experiences, gamma, actions_next, actions_pred)
 
         self.optimized = True

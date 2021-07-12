@@ -38,26 +38,60 @@ The environment is considered solved, when the average (over 100 episodes) of th
 
 2. Place the file in the DRLND GitHub repository, in the `p3_collab-compet/` folder, and unzip (or decompress) the file. 
 
+### Installation
+
+This repository is quite sensible to package version.
+* You need Python 3.8.x (not that I couldn't make it waork on Python 3.9 at the date of creation of this file)
+* Then you need to clone this repository
+```bash
+git clone https://github.com/bedlopie/NanoDegree-DRL.git
+```
+* I would advise you to use a virtual environement to make sure all is well installed and isolated from the rest of your machine, don't forget to upgrade pip
+```bash
+python -m venv drlnd
+python.exe -m pip install --upgrade pip
+```
+* Then pip install the requirement.txt file in this directory
+```bash
+pip install -r requirements.txt
+```
+* Then, you need to install another set of package
+```bash
+pip install -r ./deep-reinforcement-learning/python/requirements.txt
+```
+* And last create the Kernel to run all of this, you need to set jupyter to use this kernel instead of the default one
+```bash
+python -m ipykernel install --user --name drlnd --display-name "drlnd"
+```
+
+Then you can go in project 1 - 2 - 3 to run the projects
+
+### How to use the project
+
+**The projects are all built the same way.**
+You have 3 files
+1. *.ipynb           / file to run project (ie. Tennis.ipynb)
+2. model.py          / file containing the Deep Neural Network model 
+3. maddpg_agent.py   / file containing the agent in charge of acting on the environement
+4. tools.py          / file containing Replay buffer and Reward buffer
+
+model and agent file have been setup and fine tune.
+you need to go in the ipynb file to run the project.
+
+#### Demo vs Training mode
+
+in cell 2, you have a "demo" variable. Set it to True to view save model and to False to train a model
+
+#### Training
+
+set up hyperparameters of agent and model in cell number 8, by modifying the dictonary called hyperparameters
+Checkpoints are created along the way. One for critic network and one for actor
+* checkpoint_agent#_critic_episode##.pth         ## being the average score value obtained in training or the score obtained
+* checkpoint_agent#_critic_solved.pth            checkpoint created when problem is considered solved
+* checkpoint_agent#_critic_max.pth               checkpoint created when training is finished (might not be the best)
+
+
+
 ### Instructions
 
 Follow the instructions in `Tennis.ipynb` to get started with training your own agent!  
-
-### (Optional) Challenge: Crawler Environment
-
-After you have successfully completed the project, you might like to solve the more difficult **Soccer** environment.
-
-![Soccer][image2]
-
-In this environment, the goal is to train a team of agents to play soccer.  
-
-You can read more about this environment in the ML-Agents GitHub [here](https://github.com/Unity-Technologies/ml-agents/blob/master/docs/Learning-Environment-Examples.md#soccer-twos).  To solve this harder task, you'll need to download a new Unity environment.  (**Note**: Udacity students should not submit a project with this new environment.)
-
-You need only select the environment that matches your operating system:
-- Linux: [click here](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P3/Soccer/Soccer_Linux.zip)
-- Mac OSX: [click here](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P3/Soccer/Soccer.app.zip)
-- Windows (32-bit): [click here](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P3/Soccer/Soccer_Windows_x86.zip)
-- Windows (64-bit): [click here](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P3/Soccer/Soccer_Windows_x86_64.zip)
-
-Then, place the file in the `p3_collab-compet/` folder in the DRLND GitHub repository, and unzip (or decompress) the file.  Next, open `Soccer.ipynb` and follow the instructions to learn how to use the Python API to control the agent.
-
-(_For AWS_) If you'd like to train the agents on AWS (and have not [enabled a virtual screen](https://github.com/Unity-Technologies/ml-agents/blob/master/docs/Training-on-Amazon-Web-Service.md)), then please use [this link](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P3/Soccer/Soccer_Linux_NoVis.zip) to obtain the "headless" version of the environment.  You will **not** be able to watch the agents without enabling a virtual screen, but you will be able to train the agents.  (_To watch the agents, you should follow the instructions to [enable a virtual screen](https://github.com/Unity-Technologies/ml-agents/blob/master/docs/Training-on-Amazon-Web-Service.md), and then download the environment for the **Linux** operating system above._)
